@@ -33,3 +33,10 @@ jobs:
           npm ci
       - name: Run Build
         run: npm run build:webpack
+  finish:
+    needs: test_suite
+    name: Finish Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      run: echo "success"
